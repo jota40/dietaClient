@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans	xmlns="http://www.springframework.org/schema/beans"
+		xmlns:mvc="http://www.springframework.org/schema/mvc"
+		xmlns:security="http://www.springframework.org/schema/security"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://www.springframework.org/schema/mvc
+							http://www.springframework.org/schema/mvc/spring-mvc.xsd
+							http://www.springframework.org/schema/security
+							http://www.springframework.org/schema/security/spring-security.xsd">
+
+
+	<!-- Enabling Spring MVC configuration through annotations -->
+	<mvc:annotation-driven />
+
+	<!-- use-expression=true allows you to define access rights using methods from SecurityExpressionRoot ...-->
+<!--<http auto-config="true" entry-point-ref="http401UnauthorizedEntryPoint" create-session="always"> -->
+	<security:http auto-config="true" use-expressions="true">
+<!--		<security:intercept-url pattern="/miApp.html" access="hasRole('ROLE_USER')" /> 
+
+-->
+		<security:form-login	authentication-success-handler-ref="authenticationSuccessHandler"
+								authentication-failure-handler-ref="authenticationFailureHandler" />
+		<security:logout success-handler-ref="logoutSuccessHandler" />
+	</security:http>
+	<bean id="authenticationSuccessHandler" class="es.jota.gwt.server.security.GWTAuthenticationSuccessHandler"/>
+	<bean id="authenticationFailureHandler" class="es.jota.gwt.server.security.GWTAuthenticationFailureHandler"/>
+	<bean id="logoutSuccessHandler" class="es.jota.gwt.server.security.GWTLogoutSuccessHandler"/>
+</beans>
+	
+ 

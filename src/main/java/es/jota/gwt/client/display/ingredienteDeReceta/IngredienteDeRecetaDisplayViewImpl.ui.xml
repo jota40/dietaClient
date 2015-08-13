@@ -1,0 +1,14 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder	xmlns:ui="urn:ui:com.google.gwt.uibinder"
+				xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<g:HTMLPanel tag="table">
+		<tr ui:field="tr">
+			<td ui:field="ingrediente"/>
+			<td ui:field="racionesPorComensal" class="text-right"/>
+			<td ui:field="cantidad" class="text-right"/>
+			<td ui:field="unidadDeMedida"/>
+			<td ui:field="coste" class="text-right"/>
+			</tr>
+	</g:HTMLPanel>
+</ui:UiBinder>

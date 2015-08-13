@@ -1,0 +1,82 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder	xmlns:ui="urn:ui:com.google.gwt.uibinder"
+				xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<g:HTMLPanel ui:field="main">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" onmouseleave="$('#breadcrumb,#ingredientes,#login,#acciones').hide();">
+			<div class="container-fluid">
+				<div style="padding: 0px 10px 0px 35px;" class="navbar-header pull-right">
+					<a onmouseover="$('#acciones').show();$('#breadcrumb,#ingredientes,#login').hide();" onclick="$('#acciones').show();$('#breadcrumb,#ingredientes,#login').hide();" class="navbar-brand" style="padding: 15px 0px;">Acciones <b class="caret"/></a>
+					<g:HTMLPanel ui:field="acciones" styleName=""/>
+				</div>
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="javascript:;" class="navbar-brand" onmouseover="$('#breadcrumb').show();$('#ingredientes,#login,#acciones').hide();" onclick="$('#breadcrumb').show();$('#ingredientes,#login,#acciones').hide();">Inicio <b class="caret"/></a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li onmouseover="$('#ingredientes').show();$('#breadcrumb,#login,#acciones').hide();$(this).addClass('active');" onclick="$('#ingredientes').show();$('#breadcrumb,#login,#acciones').hide();">
+							<a href="javascript:;">Ingredientes <b class="caret"/></a>
+						</li>
+						<li onmouseover="$('#breadcrumb,#ingredientes,#login,#acciones').hide();" onclick="$('#breadcrumb,#ingredientes,#login,#acciones').hide();">
+							<a href="#recetas:">Recetas</a>
+						</li>
+						<li onmouseover="$('#breadcrumb,#ingredientes,#login,#acciones').hide();" onclick="$('#breadcrumb,#ingredientes,#login,#acciones').hide();">
+							<a href="#presupuestoNew:">Presupuesto</a>
+						</li>
+					</ul>
+					<div class="navbar-form navbar-right" onmouseover="$('#login').show();$('#breadcrumb,#ingredientes,#acciones').hide();" onclick="$('#login').show();$('#breadcrumb,#ingredientes,#acciones').hide();">
+						<div role="form">
+							<input ui:field="userName" type="text" class="form-control login" placeholder="Login"/>
+							<p ui:field="userNameP" class="form-control-static text-muted logout"/>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="breadcrumb" class="container-fluid" style="display: none;">
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Inicio</a></li>
+						<li><a href="#">Ingrediente</a></li>
+						<li class="active"><a >Otro</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="ingredientes" class="container-fluid" style="display: none;">
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#ingredientes:">Ingredientes</a></li>
+						<li><a href="#unidadesDeMedida:">Unidades de medida</a></li>
+						<li><a href="#gruposAlimento:">Grupos de alimento</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="login" class="container-fluid" style="display: none;">
+				<div class="navbar-collapse collapse">
+					<div class="navbar-form navbar-right">
+						<div role="form">
+							<div class="form-group" role="search">
+								<div class="login">
+									<input ui:field="pass" type="password" class="form-control" placeholder="Password"/>
+									<div class="checkbox"><label class="text-muted"><input ui:field="recuerdame" type="checkbox"/> Recuerdame</label></div>
+									<g:Button ui:field="login" text="Login" styleName="btn btn-default"/>
+								</div>
+								<g:Button ui:field="logout" text="Logout" styleName="btn btn-default logout"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</g:HTMLPanel>
+</ui:UiBinder> 

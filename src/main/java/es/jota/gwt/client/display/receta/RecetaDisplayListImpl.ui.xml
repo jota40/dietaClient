@@ -1,0 +1,28 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder	xmlns:ui="urn:ui:com.google.gwt.uibinder"
+				xmlns:g="urn:import:com.google.gwt.user.client.ui"
+				xmlns:c="urn:import:com.google.gwt.user.cellview.client"
+				xmlns:p="urn:import:es.jota.gwt.client.cellTable.pager"
+				xmlns:gwt="urn:import:es.jota.gwt.client.widgets.display">
+
+	<g:HTMLPanel styleName="container-fluid">
+		<g:HTMLPanel ui:field="menu">
+			<gwt:MenuItem ui:field="nuevo" text="Nuevo" grados="180" color="list-group-item-danger"/>
+		</g:HTMLPanel>
+		<div class="row-fluid">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Listado de recetas</div>
+					<div class="panel-body">
+						<g:Anchor ui:field="reset" styleName="btn btn-danger">Reset</g:Anchor>
+						<g:Anchor ui:field="refresh" styleName="btn btn-warning">Refrescar</g:Anchor>
+					</div>
+					<div class="table-responsive">
+						<c:CellTable ui:field="tabla" addStyleNames="table table-striped table-bordered table-hover table-condensed" pageSize="10"/>
+						<p:PagerScrollerDisplay ui:field="paginator"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

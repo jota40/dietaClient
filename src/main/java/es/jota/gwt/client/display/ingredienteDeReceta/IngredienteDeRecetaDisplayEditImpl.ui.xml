@@ -1,0 +1,21 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder	xmlns:ui="urn:ui:com.google.gwt.uibinder"
+				xmlns:g="urn:import:com.google.gwt.user.client.ui"
+				xmlns:gwt="urn:import:es.jota.gwt.client.widgets.display">
+
+	<g:HTMLPanel tag="table">
+		<tr ui:field="tr">
+			<td>
+				<gwt:Suggest ui:field="ingrediente" placeholder="Ingrediente"/>
+			</td>
+			<td class="text-right">
+				<input ui:field="cantidad" type="number" class="form-control text-right" placeholder="Cantidad"/>
+			</td>
+			<td class="text-right">
+				<g:Anchor ui:field="borrar" styleName="btn btn-link">Borrar</g:Anchor>
+				<g:Anchor ui:field="up" styleName="btn btn-link">Up</g:Anchor>
+				<g:Anchor ui:field="down" styleName="btn btn-link">Down</g:Anchor>
+			</td>
+		</tr>
+	</g:HTMLPanel>
+</ui:UiBinder>
